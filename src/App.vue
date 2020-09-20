@@ -2,12 +2,12 @@
   <div id="app" class='container'>
     <h1>Weather App Using Vue</h1>
 
-    <div>
+    <div class="py-2 px-1">
       <input type='text' placeholder="Enter A place" v-model='searchTerm'>
       <button v-on:click='buttonPressed' class='btn btn-primary'>Search Place</button>
     </div>
 
-    <div id="weather" v-if="weathers.length != 0">
+    <div id="weather" v-if="weathers.length != 0" class="py-3 px-1">
       <h2>Weather Info</h2>
       <h3>{{city}}</h3>
 
