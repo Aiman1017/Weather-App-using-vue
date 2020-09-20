@@ -21,7 +21,7 @@
           </tr>
 
           <tr v-for='weather in weathers' :key="weather.dt">
-            <td>{{weather.dt}}</td>
+            <td>{{new Date(weather.dt * 1000)}}</td>
             <td>{{weather.weather[0].main}}</td>
             <td>{{(weather.temp.day - 273.15).toFixed(2)}}C</td>
             <td><img v-bind:src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}03d@2x.png`"></td>
@@ -32,7 +32,7 @@
     </div>
 
     <div id='weather-info' v-if='selectedWeather'>
-      <h3>{{selectedWeather.dt}}</h3>
+      <h3>{{new Date(selectedWeather.dt * 1000)}}</h3>
       <img v-bind:src="`https://openweathermap.org/img/wn/${selectedWeather.weather[0].icon}@2x.png`">
     </div>
   </div>
